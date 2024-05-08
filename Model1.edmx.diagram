@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0757e453126b4f69bc53267884dee5b4" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Анализы__Tests_" Width="1.5" PointX="8.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Врачи__Doctors_" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Закупки__Purchases_" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Назначения__Appointments_" Width="1.5" PointX="7.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Оборудование__Equipment_" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Описание_анализа__Description_" Width="1.5" PointX="6" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Отделы__Departments_" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Пациенты__Patients_" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Поставщики__Suppliers_" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Результаты_анализов__Test_Results_" Width="1.5" PointX="10.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Специализация_врача__Specialization_" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_User_Role1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Врачи__Doctors__Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Анализы__Tests__Описание_анализа__Description_" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Результаты_анализов__Test_Results__Анализы__Tests_" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Врачи__Doctors__Отделы__Departments_" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Врачи__Doctors__Специализация_врача__Specialization_" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Назначения__Appointments__Врачи__Doctors_" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Результаты_анализов__Test_Results__Врачи__Doctors_" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Закупки__Purchases__Оборудование__Equipment_" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Закупки__Purchases__Поставщики__Suppliers_" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Назначения__Appointments__Пациенты__Patients_1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Отделы__Departments__Поставщики__Suppliers_" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Результаты_анализов__Test_Results__Пациенты__Patients_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
