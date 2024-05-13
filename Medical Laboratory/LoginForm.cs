@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +20,7 @@ namespace Medical_Laboratory
 
         private void label6_Click_1(object sender, EventArgs e)
         {
-            new LoginForm_2().Show();
+            new Home().Show();
             this.Hide();
         }
 
@@ -49,6 +50,7 @@ namespace Medical_Laboratory
                 {
                     new Main_Page().Show();
                     this.Hide();
+                    string s = txtUsername.Text;
                 }
             }
 

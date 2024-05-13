@@ -1443,8 +1443,6 @@ namespace Medical_Laboratory {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnEmail;
-            
             private global::System.Data.DataColumn columnLogin;
             
             private global::System.Data.DataColumn columnPassword;
@@ -1452,6 +1450,10 @@ namespace Medical_Laboratory {
             private global::System.Data.DataColumn columnPhoto;
             
             private global::System.Data.DataColumn columnRole;
+            
+            private global::System.Data.DataColumn columnip;
+            
+            private global::System.Data.DataColumn columnlastenter;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1496,14 +1498,6 @@ namespace Medical_Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EmailColumn {
-                get {
-                    return this.columnEmail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn LoginColumn {
                 get {
                     return this.columnLogin;
@@ -1531,6 +1525,22 @@ namespace Medical_Laboratory {
             public global::System.Data.DataColumn RoleColumn {
                 get {
                     return this.columnRole;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ipColumn {
+                get {
+                    return this.columnip;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn lastenterColumn {
+                get {
+                    return this.columnlastenter;
                 }
             }
             
@@ -1571,15 +1581,16 @@ namespace Medical_Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserRow AddUserRow(int ID, string Email, string Login, string Password, byte[] Photo, string Role) {
+            public UserRow AddUserRow(int ID, string Login, string Password, byte[] Photo, string Role, string ip, System.DateTime lastenter) {
                 UserRow rowUserRow = ((UserRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
-                        Email,
                         Login,
                         Password,
                         Photo,
-                        Role};
+                        Role,
+                        ip,
+                        lastenter};
                 rowUserRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUserRow);
                 return rowUserRow;
@@ -1610,11 +1621,12 @@ namespace Medical_Laboratory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnEmail = base.Columns["Email"];
                 this.columnLogin = base.Columns["Login"];
                 this.columnPassword = base.Columns["Password"];
                 this.columnPhoto = base.Columns["Photo"];
                 this.columnRole = base.Columns["Role"];
+                this.columnip = base.Columns["ip"];
+                this.columnlastenter = base.Columns["lastenter"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1622,8 +1634,6 @@ namespace Medical_Laboratory {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmail);
                 this.columnLogin = new global::System.Data.DataColumn("Login", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLogin);
                 this.columnPassword = new global::System.Data.DataColumn("Password", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1632,18 +1642,21 @@ namespace Medical_Laboratory {
                 base.Columns.Add(this.columnPhoto);
                 this.columnRole = new global::System.Data.DataColumn("Role", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRole);
+                this.columnip = new global::System.Data.DataColumn("ip", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnip);
+                this.columnlastenter = new global::System.Data.DataColumn("lastenter", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlastenter);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnEmail.AllowDBNull = false;
-                this.columnEmail.MaxLength = 50;
                 this.columnLogin.AllowDBNull = false;
                 this.columnLogin.MaxLength = 50;
                 this.columnPassword.AllowDBNull = false;
                 this.columnPassword.MaxLength = 50;
                 this.columnRole.AllowDBNull = false;
                 this.columnRole.MaxLength = 50;
+                this.columnip.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5479,17 +5492,6 @@ namespace Medical_Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Email {
-                get {
-                    return ((string)(this[this.tableUser.EmailColumn]));
-                }
-                set {
-                    this[this.tableUser.EmailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Login {
                 get {
                     return ((string)(this[this.tableUser.LoginColumn]));
@@ -5539,6 +5541,38 @@ namespace Medical_Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ip {
+                get {
+                    try {
+                        return ((string)(this[this.tableUser.ipColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ip\' в таблице \'User\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUser.ipColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime lastenter {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableUser.lastenterColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'lastenter\' в таблице \'User\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUser.lastenterColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsPhotoNull() {
                 return this.IsNull(this.tableUser.PhotoColumn);
             }
@@ -5547,6 +5581,30 @@ namespace Medical_Laboratory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPhotoNull() {
                 this[this.tableUser.PhotoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsipNull() {
+                return this.IsNull(this.tableUser.ipColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetipNull() {
+                this[this.tableUser.ipColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IslastenterNull() {
+                return this.IsNull(this.tableUser.lastenterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetlastenterNull() {
+                this[this.tableUser.lastenterColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7926,11 +7984,12 @@ SELECT Doctor_id, Name, Surname, Specialization, Email, Phone_number, Department
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "User";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Email", "Email");
             tableMapping.ColumnMappings.Add("Login", "Login");
             tableMapping.ColumnMappings.Add("Password", "Password");
             tableMapping.ColumnMappings.Add("Photo", "Photo");
             tableMapping.ColumnMappings.Add("Role", "Role");
+            tableMapping.ColumnMappings.Add("ip", "ip");
+            tableMapping.ColumnMappings.Add("lastenter", "lastenter");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7944,19 +8003,13 @@ SELECT Doctor_id, Name, Surname, Specialization, Email, Phone_number, Department
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        [User].ID, [User].Email, [User].Login, [User].Password, Role.Role, " +
-                "[User].Photo\r\nFROM            [User] INNER JOIN\r\n                         Role O" +
-                "N [User].Role = Role.ID";
+            this._commandCollection[0].CommandText = "SELECT        [User].ID, [User].Login, [User].Password, Role.Role, [User].Photo, " +
+                "[User].ip, [User].lastenter\r\nFROM            [User] INNER JOIN\r\n                " +
+                "         Role ON [User].Role = Role.ID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        [User].ID, [User].Email, [User].Login, [User].Password, Role.Role, " +
-                "[User].Photo\r\nFROM            [User] INNER JOIN\r\n                         Role O" +
-                "N [User].Role = Role.ID";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7978,30 +8031,6 @@ SELECT Doctor_id, Name, Surname, Specialization, Email, Phone_number, Department
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual Medical_LaboratoryDataSet.UserDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Medical_LaboratoryDataSet.UserDataTable dataTable = new Medical_LaboratoryDataSet.UserDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(Medical_LaboratoryDataSet.UserDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Medical_LaboratoryDataSet.UserDataTable GetDataBy() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
             Medical_LaboratoryDataSet.UserDataTable dataTable = new Medical_LaboratoryDataSet.UserDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

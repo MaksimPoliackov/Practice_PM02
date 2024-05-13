@@ -4,6 +4,9 @@
 
     partial class Medical_LaboratoryDataSet
     {
+        partial class UserDataTable
+        {
+        }
     }
 }
 

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Doctors">
           <Key>
             <PropertyRef Name="Doctor_id" />
@@ -40,11 +40,13 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Role" Type="int" Nullable="false" />
           <Property Name="Photo" Type="image" />
+          <Property Name="ip" Type="nvarchar" MaxLength="255" />
+          <Property Name="lastenter" Type="date" />
+          <Property Name="services" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Анализы (Tests)">
           <Key>
@@ -67,6 +69,40 @@
           <Property Name="Phone_number" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Department" Type="int" Nullable="false" />
           <Property Name="Role" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Выставленые_счета_страховой_компании">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Название страховой компании" Type="int" />
+          <Property Name="Сумма" Type="money" />
+        </EntityType>
+        <EntityType Name="Данные_страховых_компаний">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="insurance_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="country" Type="nvarchar" MaxLength="255" />
+          <Property Name="insurance_address" Type="nvarchar" MaxLength="255" />
+          <Property Name="insurance_inn" Type="int" />
+          <Property Name="ipadress" Type="nvarchar" MaxLength="255" />
+          <Property Name="insurance_p/c" Type="int" />
+          <Property Name="insurance_bik" Type="int" />
+        </EntityType>
+        <EntityType Name="Заказ">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="patient" Type="int" />
+          <Property Name="barcode" Type="varbinary(max)" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="accepted" Type="bit" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="255" />
+          <Property Name="finished" Type="datetime" />
+          <Property Name="service" Type="int" />
         </EntityType>
         <EntityType Name="Закупки (Purchases)">
           <Key>
@@ -153,6 +189,16 @@
           </Key>
           <Property Name="Specialization_ID" Type="int" Nullable="false" />
           <Property Name="Specialization" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Услуги_лаборатории">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Наименование" Type="varchar(max)" />
+          <Property Name="Стоимость" Type="money" />
+          <Property Name="Срок выполнения" Type="nvarchar" MaxLength="50" />
+          <Property Name="Среднее отклонение" Type="int" />
         </EntityType>
         <Association Name="FK_User_Role1">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
@@ -317,6 +363,9 @@
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Анализы (Tests)" EntityType="Self.Анализы (Tests)" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Врачи (Doctors)" EntityType="Self.Врачи (Doctors)" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Выставленые_счета_страховой_компании" EntityType="Self.Выставленые_счета_страховой_компании" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Данные_страховых_компаний" EntityType="Self.Данные_страховых_компаний" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Заказ" EntityType="Self.Заказ" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Закупки (Purchases)" EntityType="Self.Закупки (Purchases)" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Назначения (Appointments)" EntityType="Self.Назначения (Appointments)" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Оборудование (Equipment)" EntityType="Self.Оборудование (Equipment)" Schema="dbo" store:Type="Tables" />
@@ -326,6 +375,7 @@
           <EntitySet Name="Поставщики (Suppliers)" EntityType="Self.Поставщики (Suppliers)" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Результаты анализов (Test_Results)" EntityType="Self.Результаты анализов (Test_Results)" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Специализация врача (Specialization)" EntityType="Self.Специализация врача (Specialization)" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Услуги_лаборатории" EntityType="Self.Услуги_лаборатории" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_User_Role1" Association="Self.FK_User_Role1">
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
@@ -379,8 +429,7 @@
             <End Role="Результаты анализов (Test_Results)" EntitySet="Результаты анализов (Test_Results)" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -421,12 +470,14 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Role" Type="Int32" Nullable="false" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Role1" Relationship="Self.FK_User_Role1" FromRole="User" ToRole="Role" />
+          <Property Name="ip" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="lastenter" Type="DateTime" Precision="0" />
+          <Property Name="services" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Анализы__Tests_">
           <Key>
@@ -783,7 +834,55 @@
             <End Role="Пациенты__Patients_" EntitySet="Пациенты__Patients_" />
             <End Role="Результаты_анализов__Test_Results_" EntitySet="Результаты_анализов__Test_Results_" />
           </AssociationSet>
+          <EntitySet Name="Выставленые_счета_страховой_компании" EntityType="Model.Выставленые_счета_страховой_компании" />
+          <EntitySet Name="Данные_страховых_компаний" EntityType="Model.Данные_страховых_компаний" />
+          <EntitySet Name="Заказ" EntityType="Model.Заказ" />
+          <EntitySet Name="Услуги_лаборатории" EntityType="Model.Услуги_лаборатории" />
         </EntityContainer>
+        <EntityType Name="Выставленые_счета_страховой_компании">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Название_страховой_компании" Type="Int32" />
+          <Property Name="Сумма" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Данные_страховых_компаний">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="insurance_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="insurance_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="insurance_inn" Type="Int32" />
+          <Property Name="ipadress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="insurance_p_c" Type="Int32" />
+          <Property Name="insurance_bik" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Заказ">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="patient" Type="Int32" />
+          <Property Name="barcode" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="accepted" Type="Boolean" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="finished" Type="DateTime" Precision="3" />
+          <Property Name="service" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Услуги_лаборатории">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Наименование" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Стоимость" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Срок_выполнения" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Среднее_отклонение" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -826,8 +925,10 @@
           <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="Model.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="services" ColumnName="services" />
+                <ScalarProperty Name="lastenter" ColumnName="lastenter" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
@@ -951,6 +1052,54 @@
               <MappingFragment StoreEntitySet="Специализация врача (Specialization)">
                 <ScalarProperty Name="Specialization_ID" ColumnName="Specialization_ID" />
                 <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Выставленые_счета_страховой_компании">
+            <EntityTypeMapping TypeName="Model.Выставленые_счета_страховой_компании">
+              <MappingFragment StoreEntitySet="Выставленые_счета_страховой_компании">
+                <ScalarProperty Name="Сумма" ColumnName="Сумма" />
+                <ScalarProperty Name="Название_страховой_компании" ColumnName="Название страховой компании" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Данные_страховых_компаний">
+            <EntityTypeMapping TypeName="Model.Данные_страховых_компаний">
+              <MappingFragment StoreEntitySet="Данные_страховых_компаний">
+                <ScalarProperty Name="insurance_bik" ColumnName="insurance_bik" />
+                <ScalarProperty Name="insurance_p_c" ColumnName="insurance_p/c" />
+                <ScalarProperty Name="ipadress" ColumnName="ipadress" />
+                <ScalarProperty Name="insurance_inn" ColumnName="insurance_inn" />
+                <ScalarProperty Name="insurance_address" ColumnName="insurance_address" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="insurance_name" ColumnName="insurance_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Заказ">
+            <EntityTypeMapping TypeName="Model.Заказ">
+              <MappingFragment StoreEntitySet="Заказ">
+                <ScalarProperty Name="service" ColumnName="service" />
+                <ScalarProperty Name="finished" ColumnName="finished" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="accepted" ColumnName="accepted" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="barcode" ColumnName="barcode" />
+                <ScalarProperty Name="patient" ColumnName="patient" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Услуги_лаборатории">
+            <EntityTypeMapping TypeName="Model.Услуги_лаборатории">
+              <MappingFragment StoreEntitySet="Услуги_лаборатории">
+                <ScalarProperty Name="Среднее_отклонение" ColumnName="Среднее отклонение" />
+                <ScalarProperty Name="Срок_выполнения" ColumnName="Срок выполнения" />
+                <ScalarProperty Name="Стоимость" ColumnName="Стоимость" />
+                <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

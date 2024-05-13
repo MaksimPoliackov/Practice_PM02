@@ -25,13 +25,31 @@ namespace Medical_Laboratory
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            new LoginForm_2().Show();
+            new LoginForm().Show();
             this.Hide();
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void laboratory_assistant_btn_Click(object sender, EventArgs e)
+        {
+            new LoginForm().Show();
+            this.Hide();
+        }
+
+        private void laboratory_researcher_btn_Click(object sender, EventArgs e)
+        {
+            new LoginForm().Show();
+            this.Hide();
+        }
+
+        private void Accountant_login_btn_Click(object sender, EventArgs e)
+        {
+            new LoginForm().Show();
+            this.Hide();
         }
     }
 }

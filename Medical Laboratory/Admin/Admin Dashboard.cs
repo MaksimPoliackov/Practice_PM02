@@ -1,4 +1,6 @@
 ﻿using Medical_Laboratory.Admin_Dashboard;
+using Microsoft.Reporting.WebForms;
+using Microsoft.ReportingServices.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,6 +69,13 @@ namespace Medical_Laboratory
             this.Visible = false;
             Generate_Barcode ad = new Generate_Barcode();
             ad.ShowDialog();
+        }
+
+        private void Report_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Report av = new Report();
+            av.ShowDialog();
         }
     }
 }

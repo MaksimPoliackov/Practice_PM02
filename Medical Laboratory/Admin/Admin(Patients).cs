@@ -66,5 +66,25 @@ namespace Medical_Laboratory.Admin_Dashboard
             Generate_Barcode ad = new Generate_Barcode();
             ad.ShowDialog();
         }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.userTableAdapter.Fill(this.medical_LaboratoryDataSet.User);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void Report_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Gene ad = new Report();
+            ad.ShowDialog();
+        }
     }
 }

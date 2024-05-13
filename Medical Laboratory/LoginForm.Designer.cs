@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
             this.registrationButton = new System.Windows.Forms.Button();
@@ -40,28 +39,17 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(78)))), ((int)(((byte)(165)))));
-            this.label6.Location = new System.Drawing.Point(33, 428);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(224, 17);
-            this.label6.TabIndex = 63;
-            this.label6.Text = "Войти по электронной почте";
-            this.label6.Click += new System.EventHandler(this.label6_Click_1);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 399);
+            this.label5.Location = new System.Drawing.Point(33, 390);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 17);
+            this.label5.Size = new System.Drawing.Size(223, 17);
             this.label5.TabIndex = 64;
-            this.label5.Text = "У меня нету логина";
+            this.label5.Text = "У меня нету логина и пароля";
             // 
             // clearButton
             // 
@@ -70,7 +58,7 @@
             this.clearButton.FlatAppearance.BorderSize = 2;
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.clearButton.Location = new System.Drawing.Point(35, 359);
+            this.clearButton.Location = new System.Drawing.Point(35, 350);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(218, 28);
             this.clearButton.TabIndex = 58;
@@ -85,7 +73,7 @@
             this.registrationButton.FlatAppearance.BorderSize = 0;
             this.registrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registrationButton.ForeColor = System.Drawing.Color.White;
-            this.registrationButton.Location = new System.Drawing.Point(35, 312);
+            this.registrationButton.Location = new System.Drawing.Point(35, 303);
             this.registrationButton.Name = "registrationButton";
             this.registrationButton.Size = new System.Drawing.Size(218, 28);
             this.registrationButton.TabIndex = 57;
@@ -109,7 +97,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(132, 313);
+            this.checkBox1.Location = new System.Drawing.Point(132, 304);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(122, 21);
             this.checkBox1.TabIndex = 62;
@@ -168,11 +156,24 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Get Started";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(78)))), ((int)(((byte)(165)))));
+            this.label6.Location = new System.Drawing.Point(102, 417);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 21);
+            this.label6.TabIndex = 63;
+            this.label6.Text = "Выйти";
+            this.label6.Click += new System.EventHandler(this.label6_Click_1);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 489);
+            this.ClientSize = new System.Drawing.Size(285, 453);
             this.ControlBox = false;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -200,7 +201,6 @@
         #endregion
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button registrationButton;
@@ -211,6 +211,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
     }
 }
 

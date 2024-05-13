@@ -138,7 +138,7 @@ SELECT ID, Role FROM Role WHERE (ID = @ID)</CommandText>
               <DbSource ConnectionRef="Medical_LaboratoryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        [User].ID, [User].Email, [User].Login, [User].Password, Role.Role, [User].Photo
+                    <CommandText>SELECT        [User].ID, [User].Login, [User].Password, Role.Role, [User].Photo, [User].ip, [User].lastenter
 FROM            [User] INNER JOIN
                          Role ON [User].Role = Role.ID</CommandText>
                     <Parameters />
@@ -148,24 +148,14 @@ FROM            [User] INNER JOIN
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Email" DataSetColumn="Email" />
               <Mapping SourceColumn="Login" DataSetColumn="Login" />
               <Mapping SourceColumn="Password" DataSetColumn="Password" />
               <Mapping SourceColumn="Photo" DataSetColumn="Photo" />
               <Mapping SourceColumn="Role" DataSetColumn="Role" />
+              <Mapping SourceColumn="ip" DataSetColumn="ip" />
+              <Mapping SourceColumn="lastenter" DataSetColumn="lastenter" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="Medical_LaboratoryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        [User].ID, [User].Email, [User].Login, [User].Password, Role.Role, [User].Photo
-FROM            [User] INNER JOIN
-                         Role ON [User].Role = Role.ID</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Анализы (Tests)TableAdapter" GeneratorDataComponentClassName="Анализы__Tests_TableAdapter" Name="Анализы (Tests)" UserDataComponentName="Анализы (Tests)TableAdapter">
             <MainSource>
@@ -882,13 +872,6 @@ SELECT Specialization_ID, Specialization FROM [Специализация вра
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
-              <xs:element name="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnVarNameInTable="columnEmail">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="Login" msprop:Generator_ColumnPropNameInTable="LoginColumn" msprop:Generator_ColumnPropNameInRow="Login" msprop:Generator_UserColumnName="Login" msprop:Generator_ColumnVarNameInTable="columnLogin">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -904,13 +887,21 @@ SELECT Specialization_ID, Specialization FROM [Специализация вра
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_UserColumnName="Photo" msprop:Generator_ColumnVarNameInTable="columnPhoto" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="Role" msprop:Generator_UserColumnName="Role" msprop:Generator_ColumnPropNameInTable="RoleColumn" msprop:Generator_ColumnPropNameInRow="Role" msprop:Generator_ColumnVarNameInTable="columnRole">
+              <xs:element name="Role" msprop:Generator_ColumnPropNameInTable="RoleColumn" msprop:Generator_ColumnPropNameInRow="Role" msprop:Generator_UserColumnName="Role" msprop:Generator_ColumnVarNameInTable="columnRole">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ip" msprop:Generator_ColumnPropNameInRow="ip" msprop:Generator_ColumnPropNameInTable="ipColumn" msprop:Generator_ColumnVarNameInTable="columnip" msprop:Generator_UserColumnName="ip" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lastenter" msprop:Generator_ColumnPropNameInRow="lastenter" msprop:Generator_ColumnPropNameInTable="lastenterColumn" msprop:Generator_ColumnVarNameInTable="columnlastenter" msprop:Generator_UserColumnName="lastenter" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -962,21 +953,21 @@ SELECT Specialization_ID, Specialization FROM [Специализация вра
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Specialization" msprop:Generator_ColumnPropNameInRow="Specialization" msprop:Generator_ColumnPropNameInTable="SpecializationColumn" msprop:Generator_ColumnVarNameInTable="columnSpecialization" msprop:Generator_UserColumnName="Specialization">
+              <xs:element name="Specialization" msprop:Generator_ColumnPropNameInTable="SpecializationColumn" msprop:Generator_ColumnPropNameInRow="Specialization" msprop:Generator_UserColumnName="Specialization" msprop:Generator_ColumnVarNameInTable="columnSpecialization">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Role" msprop:Generator_ColumnPropNameInRow="Role" msprop:Generator_ColumnPropNameInTable="RoleColumn" msprop:Generator_ColumnVarNameInTable="columnRole" msprop:Generator_UserColumnName="Role">
+              <xs:element name="Role" msprop:Generator_ColumnPropNameInTable="RoleColumn" msprop:Generator_ColumnPropNameInRow="Role" msprop:Generator_UserColumnName="Role" msprop:Generator_ColumnVarNameInTable="columnRole">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_UserColumnName="Description">
+              <xs:element name="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnVarNameInTable="columnDescription">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />

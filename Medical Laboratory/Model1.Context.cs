@@ -40,5 +40,9 @@ namespace Medical_Laboratory
         public virtual DbSet<Поставщики__Suppliers_> Поставщики__Suppliers_ { get; set; }
         public virtual DbSet<Результаты_анализов__Test_Results_> Результаты_анализов__Test_Results_ { get; set; }
         public virtual DbSet<Специализация_врача__Specialization_> Специализация_врача__Specialization_ { get; set; }
+        public virtual DbSet<Выставленые_счета_страховой_компании> Выставленые_счета_страховой_компании { get; set; }
+        public virtual DbSet<Данные_страховых_компаний> Данные_страховых_компаний { get; set; }
+        public virtual DbSet<Заказ> Заказ { get; set; }
+        public virtual DbSet<Услуги_лаборатории> Услуги_лаборатории { get; set; }
     }
 }

@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Appointment_));
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.welcome_text = new System.Windows.Forms.Label();
             this.avatarImage = new System.Windows.Forms.PictureBox();
             this.username_label = new System.Windows.Forms.Label();
-            this.welcome_text = new System.Windows.Forms.Label();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.logoImage = new System.Windows.Forms.PictureBox();
             this.navigationPanel = new System.Windows.Forms.Panel();
+            this.Report = new System.Windows.Forms.Button();
+            this.Barcode = new System.Windows.Forms.Button();
             this.logout_btn = new System.Windows.Forms.Button();
             this.appointmentBtn = new System.Windows.Forms.Button();
             this.staffBtn = new System.Windows.Forms.Button();
@@ -43,7 +45,7 @@
             this.doctorsBtn = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.button3 = new System.Windows.Forms.Button();
-            this.Barcode = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarImage)).BeginInit();
             this.logoPanel.SuspendLayout();
@@ -54,14 +56,28 @@
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(90)))));
+            this.headerPanel.Controls.Add(this.label1);
+            this.headerPanel.Controls.Add(this.welcome_text);
             this.headerPanel.Controls.Add(this.avatarImage);
             this.headerPanel.Controls.Add(this.username_label);
-            this.headerPanel.Controls.Add(this.welcome_text);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(840, 69);
             this.headerPanel.TabIndex = 1;
+            // 
+            // welcome_text
+            // 
+            this.welcome_text.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.welcome_text.AutoSize = true;
+            this.welcome_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcome_text.ForeColor = System.Drawing.Color.White;
+            this.welcome_text.Location = new System.Drawing.Point(372, 24);
+            this.welcome_text.Name = "welcome_text";
+            this.welcome_text.Size = new System.Drawing.Size(97, 20);
+            this.welcome_text.TabIndex = 14;
+            this.welcome_text.Text = "Dashboard";
+            this.welcome_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // avatarImage
             // 
@@ -86,18 +102,6 @@
             this.username_label.TabIndex = 13;
             this.username_label.Text = "System";
             // 
-            // welcome_text
-            // 
-            this.welcome_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.welcome_text.AutoSize = true;
-            this.welcome_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome_text.ForeColor = System.Drawing.Color.White;
-            this.welcome_text.Location = new System.Drawing.Point(344, 26);
-            this.welcome_text.Name = "welcome_text";
-            this.welcome_text.Size = new System.Drawing.Size(152, 20);
-            this.welcome_text.TabIndex = 11;
-            this.welcome_text.Text = "Admin Dashboard";
-            // 
             // logoPanel
             // 
             this.logoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
@@ -121,6 +125,7 @@
             // navigationPanel
             // 
             this.navigationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(77)))));
+            this.navigationPanel.Controls.Add(this.Report);
             this.navigationPanel.Controls.Add(this.Barcode);
             this.navigationPanel.Controls.Add(this.logout_btn);
             this.navigationPanel.Controls.Add(this.appointmentBtn);
@@ -132,6 +137,49 @@
             this.navigationPanel.Name = "navigationPanel";
             this.navigationPanel.Size = new System.Drawing.Size(200, 420);
             this.navigationPanel.TabIndex = 16;
+            // 
+            // Report
+            // 
+            this.Report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(77)))));
+            this.Report.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Report.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Report.FlatAppearance.BorderSize = 0;
+            this.Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Report.ForeColor = System.Drawing.Color.White;
+            this.Report.Image = ((System.Drawing.Image)(resources.GetObject("Report.Image")));
+            this.Report.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Report.Location = new System.Drawing.Point(0, 300);
+            this.Report.Name = "Report";
+            this.Report.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.Report.Size = new System.Drawing.Size(200, 60);
+            this.Report.TabIndex = 17;
+            this.Report.Text = "Report";
+            this.Report.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Report.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Report.UseVisualStyleBackColor = false;
+            // 
+            // Barcode
+            // 
+            this.Barcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(77)))));
+            this.Barcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Barcode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Barcode.FlatAppearance.BorderSize = 0;
+            this.Barcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Barcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Barcode.ForeColor = System.Drawing.Color.White;
+            this.Barcode.Image = ((System.Drawing.Image)(resources.GetObject("Barcode.Image")));
+            this.Barcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Barcode.Location = new System.Drawing.Point(0, 240);
+            this.Barcode.Name = "Barcode";
+            this.Barcode.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.Barcode.Size = new System.Drawing.Size(200, 60);
+            this.Barcode.TabIndex = 16;
+            this.Barcode.Text = "Barcode";
+            this.Barcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Barcode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Barcode.UseVisualStyleBackColor = false;
+            this.Barcode.Click += new System.EventHandler(this.Barcode_Click);
             // 
             // logout_btn
             // 
@@ -256,27 +304,16 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Barcode
+            // label1
             // 
-            this.Barcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(77)))));
-            this.Barcode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Barcode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Barcode.FlatAppearance.BorderSize = 0;
-            this.Barcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Barcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Barcode.ForeColor = System.Drawing.Color.White;
-            this.Barcode.Image = ((System.Drawing.Image)(resources.GetObject("Barcode.Image")));
-            this.Barcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Barcode.Location = new System.Drawing.Point(0, 240);
-            this.Barcode.Name = "Barcode";
-            this.Barcode.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.Barcode.Size = new System.Drawing.Size(200, 60);
-            this.Barcode.TabIndex = 16;
-            this.Barcode.Text = "Barcode";
-            this.Barcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Barcode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Barcode.UseVisualStyleBackColor = false;
-            this.Barcode.Click += new System.EventHandler(this.Barcode_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(206, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Привет:";
             // 
             // Admin_Appointment_
             // 
@@ -312,7 +349,6 @@
         private System.Windows.Forms.Panel headerPanel;
         private System.Windows.Forms.PictureBox avatarImage;
         private System.Windows.Forms.Label username_label;
-        private System.Windows.Forms.Label welcome_text;
         private System.Windows.Forms.Panel logoPanel;
         private System.Windows.Forms.PictureBox logoImage;
         private System.Windows.Forms.Panel navigationPanel;
@@ -324,5 +360,8 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button Barcode;
+        private System.Windows.Forms.Label welcome_text;
+        private System.Windows.Forms.Button Report;
+        private System.Windows.Forms.Label label1;
     }
 }

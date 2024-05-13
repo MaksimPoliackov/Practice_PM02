@@ -43,6 +43,8 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.пациентыPatientsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.medical_LaboratoryDataSet = new Medical_Laboratory.Medical_LaboratoryDataSet();
+            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.medicalLaboratoryDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.пациентыPatientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.headerPanel = new System.Windows.Forms.Panel();
             this.avatarImage = new System.Windows.Forms.PictureBox();
@@ -52,6 +54,7 @@
             this.logoImage = new System.Windows.Forms.PictureBox();
             this.logout_btn = new System.Windows.Forms.Button();
             this.navigationPanel = new System.Windows.Forms.Panel();
+            this.Report = new System.Windows.Forms.Button();
             this.Barcode = new System.Windows.Forms.Button();
             this.appointmentBtn = new System.Windows.Forms.Button();
             this.staffBtn = new System.Windows.Forms.Button();
@@ -61,12 +64,18 @@
             this.пациентыPatientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.пациентыPatientsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.пациенты__Patients_TableAdapter = new Medical_Laboratory.Medical_LaboratoryDataSetTableAdapters.Пациенты__Patients_TableAdapter();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userTableAdapter = new Medical_Laboratory.Medical_LaboratoryDataSetTableAdapters.UserTableAdapter();
+            this.tableAdapterManager = new Medical_Laboratory.Medical_LaboratoryDataSetTableAdapters.TableAdapterManager();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.doctorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalLaboratoryDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.врачиDoctorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.пациентыPatientsBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medical_LaboratoryDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalLaboratoryDataSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.пациентыPatientsBindingSource1)).BeginInit();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarImage)).BeginInit();
@@ -75,6 +84,7 @@
             this.navigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.пациентыPatientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.пациентыPatientsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // doctorsBindingSource
@@ -118,31 +128,35 @@
             this.patientidDataGridViewTextBoxColumn.DataPropertyName = "Patient_id";
             this.patientidDataGridViewTextBoxColumn.HeaderText = "Patient_id";
             this.patientidDataGridViewTextBoxColumn.Name = "patientidDataGridViewTextBoxColumn";
-            this.patientidDataGridViewTextBoxColumn.Width = 60;
+            this.patientidDataGridViewTextBoxColumn.Width = 80;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
             this.dataGridViewTextBoxColumn1.HeaderText = "Name";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 90;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Surname";
             this.dataGridViewTextBoxColumn2.HeaderText = "Surname";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 90;
             // 
             // dateofbirthDataGridViewTextBoxColumn
             // 
             this.dateofbirthDataGridViewTextBoxColumn.DataPropertyName = "Date_of_birth";
             this.dateofbirthDataGridViewTextBoxColumn.HeaderText = "Date_of_birth";
             this.dateofbirthDataGridViewTextBoxColumn.Name = "dateofbirthDataGridViewTextBoxColumn";
+            this.dateofbirthDataGridViewTextBoxColumn.Width = 110;
             // 
             // addressDataGridViewTextBoxColumn
             // 
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.Width = 90;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -161,6 +175,16 @@
             this.medical_LaboratoryDataSet.DataSetName = "Medical_LaboratoryDataSet";
             this.medical_LaboratoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // userBindingSource1
+            // 
+            this.userBindingSource1.DataMember = "User";
+            this.userBindingSource1.DataSource = this.medicalLaboratoryDataSetBindingSource1;
+            // 
+            // medicalLaboratoryDataSetBindingSource1
+            // 
+            this.medicalLaboratoryDataSetBindingSource1.DataSource = this.medical_LaboratoryDataSet;
+            this.medicalLaboratoryDataSetBindingSource1.Position = 0;
+            // 
             // пациентыPatientsBindingSource1
             // 
             this.пациентыPatientsBindingSource1.DataMember = "Пациенты (Patients)";
@@ -168,13 +192,14 @@
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(90)))));
+            this.headerPanel.Controls.Add(this.label1);
             this.headerPanel.Controls.Add(this.avatarImage);
             this.headerPanel.Controls.Add(this.username_label);
             this.headerPanel.Controls.Add(this.welcome_text);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(200, 0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(640, 69);
+            this.headerPanel.Size = new System.Drawing.Size(648, 69);
             this.headerPanel.TabIndex = 39;
             // 
             // avatarImage
@@ -183,7 +208,7 @@
             this.avatarImage.ErrorImage = null;
             this.avatarImage.Image = ((System.Drawing.Image)(resources.GetObject("avatarImage.Image")));
             this.avatarImage.InitialImage = null;
-            this.avatarImage.Location = new System.Drawing.Point(578, 10);
+            this.avatarImage.Location = new System.Drawing.Point(586, 10);
             this.avatarImage.Name = "avatarImage";
             this.avatarImage.Size = new System.Drawing.Size(38, 35);
             this.avatarImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -196,7 +221,7 @@
             this.username_label.AutoSize = true;
             this.username_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username_label.ForeColor = System.Drawing.Color.White;
-            this.username_label.Location = new System.Drawing.Point(572, 48);
+            this.username_label.Location = new System.Drawing.Point(580, 48);
             this.username_label.Name = "username_label";
             this.username_label.Size = new System.Drawing.Size(47, 13);
             this.username_label.TabIndex = 13;
@@ -208,7 +233,7 @@
             this.welcome_text.AutoSize = true;
             this.welcome_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome_text.ForeColor = System.Drawing.Color.White;
-            this.welcome_text.Location = new System.Drawing.Point(244, 26);
+            this.welcome_text.Location = new System.Drawing.Point(248, 26);
             this.welcome_text.Name = "welcome_text";
             this.welcome_text.Size = new System.Drawing.Size(152, 20);
             this.welcome_text.TabIndex = 11;
@@ -242,7 +267,7 @@
             this.logout_btn.FlatAppearance.BorderSize = 0;
             this.logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout_btn.Location = new System.Drawing.Point(0, 451);
+            this.logout_btn.Location = new System.Drawing.Point(0, 459);
             this.logout_btn.Name = "logout_btn";
             this.logout_btn.Size = new System.Drawing.Size(200, 38);
             this.logout_btn.TabIndex = 14;
@@ -252,6 +277,7 @@
             // navigationPanel
             // 
             this.navigationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(77)))));
+            this.navigationPanel.Controls.Add(this.Report);
             this.navigationPanel.Controls.Add(this.Barcode);
             this.navigationPanel.Controls.Add(this.appointmentBtn);
             this.navigationPanel.Controls.Add(this.staffBtn);
@@ -262,8 +288,30 @@
             this.navigationPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.navigationPanel.Location = new System.Drawing.Point(0, 0);
             this.navigationPanel.Name = "navigationPanel";
-            this.navigationPanel.Size = new System.Drawing.Size(200, 489);
+            this.navigationPanel.Size = new System.Drawing.Size(200, 497);
             this.navigationPanel.TabIndex = 41;
+            // 
+            // Report
+            // 
+            this.Report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(77)))));
+            this.Report.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Report.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Report.FlatAppearance.BorderSize = 0;
+            this.Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Report.ForeColor = System.Drawing.Color.White;
+            this.Report.Image = ((System.Drawing.Image)(resources.GetObject("Report.Image")));
+            this.Report.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Report.Location = new System.Drawing.Point(0, 360);
+            this.Report.Name = "Report";
+            this.Report.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.Report.Size = new System.Drawing.Size(200, 60);
+            this.Report.TabIndex = 20;
+            this.Report.Text = "Report";
+            this.Report.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Report.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Report.UseVisualStyleBackColor = false;
+            this.Report.Click += new System.EventHandler(this.Report_Click);
             // 
             // Barcode
             // 
@@ -409,12 +457,49 @@
             // 
             this.пациенты__Patients_TableAdapter.ClearBeforeFill = true;
             // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "User";
+            this.userBindingSource.DataSource = this.medical_LaboratoryDataSet;
+            // 
+            // userTableAdapter
+            // 
+            this.userTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DoctorsTableAdapter = null;
+            this.tableAdapterManager.RoleTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Medical_Laboratory.Medical_LaboratoryDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.Анализы__Tests_TableAdapter = null;
+            this.tableAdapterManager.Закупки__Purchases_TableAdapter = null;
+            this.tableAdapterManager.Назначения__Appointments_TableAdapter = null;
+            this.tableAdapterManager.Оборудование__Equipment_TableAdapter = null;
+            this.tableAdapterManager.Описание_анализа__Description_TableAdapter = null;
+            this.tableAdapterManager.Отделы__Departments_TableAdapter = null;
+            this.tableAdapterManager.Пациенты__Patients_TableAdapter = this.пациенты__Patients_TableAdapter;
+            this.tableAdapterManager.Поставщики__Suppliers_TableAdapter = null;
+            this.tableAdapterManager.Результаты_анализов__Test_Results_TableAdapter = null;
+            this.tableAdapterManager.Специализация_врача__Specialization_TableAdapter = null;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Привет:";
+            // 
             // Admin_Patients_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(840, 489);
+            this.ClientSize = new System.Drawing.Size(848, 497);
             this.ControlBox = false;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
@@ -435,6 +520,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.пациентыPatientsBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medical_LaboratoryDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalLaboratoryDataSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.пациентыPatientsBindingSource1)).EndInit();
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
@@ -444,6 +531,7 @@
             this.navigationPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.пациентыPatientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.пациентыPatientsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,12 +565,19 @@
         private Medical_LaboratoryDataSet medical_LaboratoryDataSet;
         private System.Windows.Forms.BindingSource пациентыPatientsBindingSource3;
         private Medical_LaboratoryDataSetTableAdapters.Пациенты__Patients_TableAdapter пациенты__Patients_TableAdapter;
+        private System.Windows.Forms.Button Barcode;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private Medical_LaboratoryDataSetTableAdapters.UserTableAdapter userTableAdapter;
+        private Medical_LaboratoryDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource userBindingSource1;
+        private System.Windows.Forms.BindingSource medicalLaboratoryDataSetBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateofbirthDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.Button Barcode;
+        private System.Windows.Forms.Button Report;
+        private System.Windows.Forms.Label label1;
     }
 }

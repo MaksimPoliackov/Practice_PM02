@@ -33,6 +33,10 @@
         <AssociationConnector Association="Model.FK_Назначения__Appointments__Пациенты__Patients_1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Отделы__Departments__Поставщики__Suppliers_" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Результаты_анализов__Test_Results__Пациенты__Patients_1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.Выставленые_счета_страховой_компании" Width="1.5" PointX="7.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.Данные_страховых_компаний" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.Заказ" Width="1.5" PointX="10.375" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.Услуги_лаборатории" Width="1.5" PointX="9.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

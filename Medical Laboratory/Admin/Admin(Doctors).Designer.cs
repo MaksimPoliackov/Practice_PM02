@@ -33,6 +33,8 @@
             this.username_label = new System.Windows.Forms.Label();
             this.welcome_text = new System.Windows.Forms.Label();
             this.navigationPanel = new System.Windows.Forms.Panel();
+            this.Report = new System.Windows.Forms.Button();
+            this.Barcode = new System.Windows.Forms.Button();
             this.logout_btn = new System.Windows.Forms.Button();
             this.appointmentBtn = new System.Windows.Forms.Button();
             this.staffBtn = new System.Windows.Forms.Button();
@@ -43,14 +45,6 @@
             this.headerPanel = new System.Windows.Forms.Panel();
             this.avatarImage = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.врачиDoctorsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.medical_LaboratoryDataSet = new Medical_Laboratory.Medical_LaboratoryDataSet();
-            this.врачиDoctorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.medicalLaboratoryDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.doctorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.врачи__Doctors_TableAdapter = new Medical_Laboratory.Medical_LaboratoryDataSetTableAdapters.Врачи__Doctors_TableAdapter();
-            this.Barcode = new System.Windows.Forms.Button();
             this.Doctor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +52,14 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.врачиDoctorsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.medical_LaboratoryDataSet = new Medical_Laboratory.Medical_LaboratoryDataSet();
+            this.врачиDoctorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.medicalLaboratoryDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doctorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.врачи__Doctors_TableAdapter = new Medical_Laboratory.Medical_LaboratoryDataSetTableAdapters.Врачи__Doctors_TableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             this.navigationPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImage)).BeginInit();
@@ -89,15 +91,17 @@
             this.welcome_text.AutoSize = true;
             this.welcome_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome_text.ForeColor = System.Drawing.Color.White;
-            this.welcome_text.Location = new System.Drawing.Point(348, 26);
+            this.welcome_text.Location = new System.Drawing.Point(428, 25);
             this.welcome_text.Name = "welcome_text";
-            this.welcome_text.Size = new System.Drawing.Size(152, 20);
+            this.welcome_text.Size = new System.Drawing.Size(97, 20);
             this.welcome_text.TabIndex = 11;
-            this.welcome_text.Text = "Admin Dashboard";
+            this.welcome_text.Text = "Dashboard";
+            this.welcome_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // navigationPanel
             // 
             this.navigationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(77)))));
+            this.navigationPanel.Controls.Add(this.Report);
             this.navigationPanel.Controls.Add(this.Barcode);
             this.navigationPanel.Controls.Add(this.logout_btn);
             this.navigationPanel.Controls.Add(this.appointmentBtn);
@@ -109,6 +113,49 @@
             this.navigationPanel.Name = "navigationPanel";
             this.navigationPanel.Size = new System.Drawing.Size(200, 428);
             this.navigationPanel.TabIndex = 19;
+            // 
+            // Report
+            // 
+            this.Report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(77)))));
+            this.Report.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Report.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Report.FlatAppearance.BorderSize = 0;
+            this.Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Report.ForeColor = System.Drawing.Color.White;
+            this.Report.Image = ((System.Drawing.Image)(resources.GetObject("Report.Image")));
+            this.Report.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Report.Location = new System.Drawing.Point(0, 300);
+            this.Report.Name = "Report";
+            this.Report.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.Report.Size = new System.Drawing.Size(200, 60);
+            this.Report.TabIndex = 17;
+            this.Report.Text = "Report";
+            this.Report.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Report.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Report.UseVisualStyleBackColor = false;
+            // 
+            // Barcode
+            // 
+            this.Barcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(77)))));
+            this.Barcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Barcode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Barcode.FlatAppearance.BorderSize = 0;
+            this.Barcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Barcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Barcode.ForeColor = System.Drawing.Color.White;
+            this.Barcode.Image = ((System.Drawing.Image)(resources.GetObject("Barcode.Image")));
+            this.Barcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Barcode.Location = new System.Drawing.Point(0, 240);
+            this.Barcode.Name = "Barcode";
+            this.Barcode.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.Barcode.Size = new System.Drawing.Size(200, 60);
+            this.Barcode.TabIndex = 16;
+            this.Barcode.Text = "Barcode";
+            this.Barcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Barcode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Barcode.UseVisualStyleBackColor = false;
+            this.Barcode.Click += new System.EventHandler(this.Barcode_Click);
             // 
             // logout_btn
             // 
@@ -237,6 +284,7 @@
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(90)))));
+            this.headerPanel.Controls.Add(this.label1);
             this.headerPanel.Controls.Add(this.avatarImage);
             this.headerPanel.Controls.Add(this.username_label);
             this.headerPanel.Controls.Add(this.welcome_text);
@@ -275,62 +323,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(622, 359);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // врачиDoctorsBindingSource1
-            // 
-            this.врачиDoctorsBindingSource1.DataMember = "Врачи (Doctors)";
-            this.врачиDoctorsBindingSource1.DataSource = this.medical_LaboratoryDataSet;
-            // 
-            // medical_LaboratoryDataSet
-            // 
-            this.medical_LaboratoryDataSet.DataSetName = "Medical_LaboratoryDataSet";
-            this.medical_LaboratoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // врачиDoctorsBindingSource
-            // 
-            this.врачиDoctorsBindingSource.DataMember = "Врачи (Doctors)";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(728, 440);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 37);
-            this.button3.TabIndex = 38;
-            this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // doctorsBindingSource
-            // 
-            this.doctorsBindingSource.DataMember = "Doctors";
-            this.doctorsBindingSource.CurrentChanged += new System.EventHandler(this.doctorsBindingSource_CurrentChanged);
-            // 
-            // врачи__Doctors_TableAdapter
-            // 
-            this.врачи__Doctors_TableAdapter.ClearBeforeFill = true;
-            // 
-            // Barcode
-            // 
-            this.Barcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(77)))));
-            this.Barcode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Barcode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Barcode.FlatAppearance.BorderSize = 0;
-            this.Barcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Barcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Barcode.ForeColor = System.Drawing.Color.White;
-            this.Barcode.Image = ((System.Drawing.Image)(resources.GetObject("Barcode.Image")));
-            this.Barcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Barcode.Location = new System.Drawing.Point(0, 240);
-            this.Barcode.Name = "Barcode";
-            this.Barcode.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.Barcode.Size = new System.Drawing.Size(200, 60);
-            this.Barcode.TabIndex = 16;
-            this.Barcode.Text = "Barcode";
-            this.Barcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Barcode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Barcode.UseVisualStyleBackColor = false;
-            this.Barcode.Click += new System.EventHandler(this.Barcode_Click);
             // 
             // Doctor_id
             // 
@@ -380,6 +372,51 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Role";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 70;
+            // 
+            // врачиDoctorsBindingSource1
+            // 
+            this.врачиDoctorsBindingSource1.DataMember = "Врачи (Doctors)";
+            this.врачиDoctorsBindingSource1.DataSource = this.medical_LaboratoryDataSet;
+            // 
+            // medical_LaboratoryDataSet
+            // 
+            this.medical_LaboratoryDataSet.DataSetName = "Medical_LaboratoryDataSet";
+            this.medical_LaboratoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // врачиDoctorsBindingSource
+            // 
+            this.врачиDoctorsBindingSource.DataMember = "Врачи (Doctors)";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button3.Location = new System.Drawing.Point(728, 440);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 37);
+            this.button3.TabIndex = 38;
+            this.button3.Text = "Back";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // doctorsBindingSource
+            // 
+            this.doctorsBindingSource.DataMember = "Doctors";
+            this.doctorsBindingSource.CurrentChanged += new System.EventHandler(this.doctorsBindingSource_CurrentChanged);
+            // 
+            // врачи__Doctors_TableAdapter
+            // 
+            this.врачи__Doctors_TableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(206, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Привет:";
             // 
             // Admin_Doctors_
             // 
@@ -456,5 +493,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Button Report;
+        private System.Windows.Forms.Label label1;
     }
 }

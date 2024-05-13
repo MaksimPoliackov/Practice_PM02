@@ -47,6 +47,27 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>packages\SkiaSharp.2.88.6\lib\net462\SkiaSharp.dll</HintPath>
     </Reference>
@@ -56,6 +77,11 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -83,6 +109,8 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -92,6 +120,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
     <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>packages\ZXing.Net.0.16.9\lib\net48\zxing.dll</HintPath>
     </Reference>
@@ -124,6 +153,12 @@
     <Compile Include="Admin\Admin%28Staff%29.Designer.cs">
       <DependentUpon>Admin%28Staff%29.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctors.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -145,12 +180,6 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm№2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoginForm№2.Designer.cs">
-      <DependentUpon>LoginForm№2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Admin Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +193,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Medical_LaboratoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Medical_LaboratoryDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Medical_LaboratoryDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -187,11 +221,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Report\InvoiceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\InvoiceView.Designer.cs" />
     <Compile Include="Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Timer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timer.Designer.cs">
+      <DependentUpon>Timer.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -200,6 +245,15 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Врачи__Doctors_.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Выставленые_счета_страховой_компании.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Данные_страховых_компаний.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Заказ.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Закупки__Purchases_.cs">
@@ -229,6 +283,9 @@
     <Compile Include="Специализация_врача__Specialization_.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Услуги_лаборатории.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\Admin%28Appointment%29.resx">
       <DependentUpon>Admin%28Appointment%29.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +298,9 @@
     <EmbeddedResource Include="Admin\Admin%28Staff%29.resx">
       <DependentUpon>Admin%28Staff%29.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Generate Barcode.resx">
       <DependentUpon>Generate Barcode.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,9 +310,6 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm№2.resx">
-      <DependentUpon>LoginForm№2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin\Admin Dashboard.resx">
       <DependentUpon>Admin Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +317,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\InvoiceView.resx" />
+    <EmbeddedResource Include="Timer.resx">
+      <DependentUpon>Timer.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -276,6 +337,17 @@
     <None Include="Medical_LaboratoryDataSet.xss">
       <DependentUpon>Medical_LaboratoryDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Medical_LaboratoryDataSet1.xsc">
+      <DependentUpon>Medical_LaboratoryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Medical_LaboratoryDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Medical_LaboratoryDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Medical_LaboratoryDataSet1.xss">
+      <DependentUpon>Medical_LaboratoryDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -289,6 +361,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Report\DoctorsReport.rdlc" />
+    <None Include="Report\Invoice.rdlc" />
+    <None Include="Report\PatientsReport.rdlc" />
+    <None Include="Report\PaymentsReport.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -315,6 +391,19 @@
     <Content Include="Resources\staff-icon.png" />
     <Content Include="Resources\user-doctor-solid.png" />
     <Content Include="Resources\user.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

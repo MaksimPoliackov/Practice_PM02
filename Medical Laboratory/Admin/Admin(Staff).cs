@@ -48,9 +48,7 @@ namespace Medical_Laboratory.Admin_Dashboard
 
         private void Admin_Staff__Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "medical_LaboratoryDataSet.User". При необходимости она может быть перемещена или удалена.
-            this.userTableAdapter.Fill(this.medical_LaboratoryDataSet.User);
-
+            
         }
 
         private void userBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -58,44 +56,6 @@ namespace Medical_Laboratory.Admin_Dashboard
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.userTableAdapter.FillBy(this.medical_LaboratoryDataSet.User);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillByToolStripButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.userTableAdapter.FillBy(this.medical_LaboratoryDataSet.User);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillByToolStripButton1_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.userTableAdapter.FillBy(this.medical_LaboratoryDataSet.User);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
 
         private void logout_btn_Click(object sender, EventArgs e)
         {
@@ -117,5 +77,6 @@ namespace Medical_Laboratory.Admin_Dashboard
             Generate_Barcode ad = new Generate_Barcode();
             ad.ShowDialog();
         }
+
     }
 }
