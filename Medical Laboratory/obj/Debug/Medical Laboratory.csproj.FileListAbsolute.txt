@@ -1,0 +1,79 @@
+D:\Medical Laboratory\Medical Laboratory\bin\Debug\Medical Laboratory.exe.config
+D:\Medical Laboratory\Medical Laboratory\bin\Debug\Medical Laboratory.exe
+D:\Medical Laboratory\Medical Laboratory\bin\Debug\Medical Laboratory.pdb
+D:\Medical Laboratory\Medical Laboratory\bin\Debug\EntityFramework.dll
+D:\Medical Laboratory\Medical Laboratory\bin\Debug\EntityFramework.SqlServer.dll
+D:\Medical Laboratory\Medical Laboratory\bin\Debug\EntityFramework.xml
+D:\Medical Laboratory\Medical Laboratory\bin\Debug\EntityFramework.SqlServer.xml
+D:\Medical Laboratory\Medical Laboratory\bin\Debug\ru\EntityFramework.resources.dll
+D:\Medical Laboratory\Medical Laboratory\obj\Debug\Medical Laboratory.csproj.AssemblyReference.cache
+D:\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.LoginForm.resources
+D:\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.Main_Page.resources
+D:\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.Properties.Resources.resources
+D:\Medical Laboratory\Medical Laboratory\obj\Debug\Medical Laboratory.csproj.GenerateResource.cache
+D:\Medical Laboratory\Medical Laboratory\obj\Debug\Medical Laboratory.csproj.CoreCompileInputs.cache
+D:\Medical Laboratory\Medical Laboratory\obj\Debug\Medical .3BE2E1AA.Up2Date
+D:\Medical Laboratory\Medical Laboratory\obj\Debug\Medical Laboratory.exe
+D:\Medical Laboratory\Medical Laboratory\obj\Debug\Medical Laboratory.pdb
+D:\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.LoginForm_2.resources
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\Medical Laboratory.exe.config
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\Medical Laboratory.exe
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\Medical Laboratory.pdb
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\EntityFramework.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\EntityFramework.SqlServer.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\EntityFramework.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\EntityFramework.SqlServer.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\ru\EntityFramework.resources.dll
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical Laboratory.csproj.AssemblyReference.cache
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.LoginForm.resources
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.LoginForm_2.resources
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.Main_Page.resources
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.Properties.Resources.resources
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical Laboratory.csproj.GenerateResource.cache
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical Laboratory.csproj.CoreCompileInputs.cache
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical .3BE2E1AA.Up2Date
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical Laboratory.exe
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical Laboratory.pdb
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.Home.resources
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.Admin_Doctors_.resources
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.Admin_Dashboard.Admin_Staff_.resources
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.Admin_Dashboard.Admin_Appointment_.resources
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.Admin_Dashboard.Admin_Patients_.resources
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\zxing.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\zxing.presentation.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\zxing.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\zxing.presentation.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Games\Medical Laboratory\Medical Laboratory\obj\Debug\Medical_Laboratory.Generate_Barcode.resources
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\libSkiaSharp.dylib
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\x86\libSkiaSharp.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\x64\libSkiaSharp.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\arm64\libSkiaSharp.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\x64\libSkiaSharp.so
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\arm\libSkiaSharp.so
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\arm64\libSkiaSharp.so
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\musl-x64\libSkiaSharp.so
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\BarcodeStandard.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\SkiaSharp.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Buffers.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Memory.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Numerics.Vectors.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Resources.Extensions.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Text.Encodings.Web.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Text.Json.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.ValueTuple.dll
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\SkiaSharp.pdb
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\SkiaSharp.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Buffers.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Memory.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Numerics.Vectors.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Resources.Extensions.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Text.Encodings.Web.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Text.Json.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Games\Medical Laboratory\Medical Laboratory\bin\Debug\System.ValueTuple.xml

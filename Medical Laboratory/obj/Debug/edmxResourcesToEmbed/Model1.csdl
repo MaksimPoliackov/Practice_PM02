@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Doctors">
+    <Key>
+      <PropertyRef Name="Doctor_id" />
+    </Key>
+    <Property Name="Doctor_id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Specialization" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Role1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_Role1" FromRole="Role" ToRole="User" />
+    <NavigationProperty Name="Врачи__Doctors_" Relationship="Self.FK_Врачи__Doctors__Role" FromRole="Role" ToRole="Врачи__Doctors_" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="Int32" Nullable="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Role1" Relationship="Self.FK_User_Role1" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Анализы__Tests_">
+    <Key>
+      <PropertyRef Name="Test_id" />
+    </Key>
+    <Property Name="Test_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description_id" Type="Int32" Nullable="false" />
+    <Property Name="price" Type="Decimal" Precision="10" Scale="1" Nullable="false" />
+    <NavigationProperty Name="Описание_анализа__Description_" Relationship="Self.FK_Анализы__Tests__Описание_анализа__Description_" FromRole="Анализы__Tests_" ToRole="Описание_анализа__Description_" />
+    <NavigationProperty Name="Результаты_анализов__Test_Results_" Relationship="Self.FK_Результаты_анализов__Test_Results__Анализы__Tests_" FromRole="Анализы__Tests_" ToRole="Результаты_анализов__Test_Results_" />
+  </EntityType>
+  <EntityType Name="Врачи__Doctors_">
+    <Key>
+      <PropertyRef Name="Doctor_id" />
+    </Key>
+    <Property Name="Doctor_id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Specialization" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Department" Type="Int32" Nullable="false" />
+    <Property Name="Role" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Role1" Relationship="Self.FK_Врачи__Doctors__Role" FromRole="Врачи__Doctors_" ToRole="Role" />
+    <NavigationProperty Name="Отделы__Departments_" Relationship="Self.FK_Врачи__Doctors__Отделы__Departments_" FromRole="Врачи__Doctors_" ToRole="Отделы__Departments_" />
+    <NavigationProperty Name="Специализация_врача__Specialization_" Relationship="Self.FK_Врачи__Doctors__Специализация_врача__Specialization_" FromRole="Врачи__Doctors_" ToRole="Специализация_врача__Specialization_" />
+    <NavigationProperty Name="Назначения__Appointments_" Relationship="Self.FK_Назначения__Appointments__Врачи__Doctors_" FromRole="Врачи__Doctors_" ToRole="Назначения__Appointments_" />
+    <NavigationProperty Name="Результаты_анализов__Test_Results_" Relationship="Self.FK_Результаты_анализов__Test_Results__Врачи__Doctors_" FromRole="Врачи__Doctors_" ToRole="Результаты_анализов__Test_Results_" />
+  </EntityType>
+  <EntityType Name="Закупки__Purchases_">
+    <Key>
+      <PropertyRef Name="Purchase_id" />
+    </Key>
+    <Property Name="Purchase_id" Type="Int32" Nullable="false" />
+    <Property Name="Supplier_id" Type="Int32" Nullable="false" />
+    <Property Name="Equipment_id" Type="Int32" Nullable="false" />
+    <Property Name="Date_of_purchase" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Оборудование__Equipment_" Relationship="Self.FK_Закупки__Purchases__Оборудование__Equipment_" FromRole="Закупки__Purchases_" ToRole="Оборудование__Equipment_" />
+    <NavigationProperty Name="Поставщики__Suppliers_" Relationship="Self.FK_Закупки__Purchases__Поставщики__Suppliers_" FromRole="Закупки__Purchases_" ToRole="Поставщики__Suppliers_" />
+  </EntityType>
+  <EntityType Name="Назначения__Appointments_">
+    <Key>
+      <PropertyRef Name="Appointment_id" />
+    </Key>
+    <Property Name="Appointment_id" Type="Int32" Nullable="false" />
+    <Property Name="Patient_id" Type="Int32" Nullable="false" />
+    <Property Name="Doctor_id" Type="Int32" Nullable="false" />
+    <Property Name="Date_of_appointment" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Time_of_appointment" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Врачи__Doctors_" Relationship="Self.FK_Назначения__Appointments__Врачи__Doctors_" FromRole="Назначения__Appointments_" ToRole="Врачи__Doctors_" />
+    <NavigationProperty Name="Пациенты__Patients_" Relationship="Self.FK_Назначения__Appointments__Пациенты__Patients_1" FromRole="Назначения__Appointments_" ToRole="Пациенты__Patients_" />
+  </EntityType>
+  <EntityType Name="Оборудование__Equipment_">
+    <Key>
+      <PropertyRef Name="Equipment_id" />
+    </Key>
+    <Property Name="Equipment_id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Manufacturer" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Закупки__Purchases_" Relationship="Self.FK_Закупки__Purchases__Оборудование__Equipment_" FromRole="Оборудование__Equipment_" ToRole="Закупки__Purchases_" />
+  </EntityType>
+  <EntityType Name="Описание_анализа__Description_">
+    <Key>
+      <PropertyRef Name="Description_id" />
+    </Key>
+    <Property Name="Description_id" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Анализы__Tests_" Relationship="Self.FK_Анализы__Tests__Описание_анализа__Description_" FromRole="Описание_анализа__Description_" ToRole="Анализы__Tests_" />
+  </EntityType>
+  <EntityType Name="Отделы__Departments_">
+    <Key>
+      <PropertyRef Name="Department_id" />
+    </Key>
+    <Property Name="Department_id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Supplier_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Врачи__Doctors_" Relationship="Self.FK_Врачи__Doctors__Отделы__Departments_" FromRole="Отделы__Departments_" ToRole="Врачи__Doctors_" />
+    <NavigationProperty Name="Поставщики__Suppliers_" Relationship="Self.FK_Отделы__Departments__Поставщики__Suppliers_" FromRole="Отделы__Departments_" ToRole="Поставщики__Suppliers_" />
+  </EntityType>
+  <EntityType Name="Пациенты__Patients_">
+    <Key>
+      <PropertyRef Name="Patient_id" />
+    </Key>
+    <Property Name="Patient_id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date_of_birth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Назначения__Appointments_" Relationship="Self.FK_Назначения__Appointments__Пациенты__Patients_1" FromRole="Пациенты__Patients_" ToRole="Назначения__Appointments_" />
+    <NavigationProperty Name="Результаты_анализов__Test_Results_" Relationship="Self.FK_Результаты_анализов__Test_Results__Пациенты__Patients_1" FromRole="Пациенты__Patients_" ToRole="Результаты_анализов__Test_Results_" />
+  </EntityType>
+  <EntityType Name="Поставщики__Suppliers_">
+    <Key>
+      <PropertyRef Name="Supplier_id" />
+    </Key>
+    <Property Name="Supplier_id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Закупки__Purchases_" Relationship="Self.FK_Закупки__Purchases__Поставщики__Suppliers_" FromRole="Поставщики__Suppliers_" ToRole="Закупки__Purchases_" />
+    <NavigationProperty Name="Отделы__Departments_" Relationship="Self.FK_Отделы__Departments__Поставщики__Suppliers_" FromRole="Поставщики__Suppliers_" ToRole="Отделы__Departments_" />
+  </EntityType>
+  <EntityType Name="Результаты_анализов__Test_Results_">
+    <Key>
+      <PropertyRef Name="Result_id" />
+    </Key>
+    <Property Name="Result_id" Type="Int32" Nullable="false" />
+    <Property Name="Patient_id" Type="Int32" Nullable="false" />
+    <Property Name="Test_id" Type="Int32" Nullable="false" />
+    <Property Name="Doctor_id" Type="Int32" Nullable="false" />
+    <Property Name="Date_of_test" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="result" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Анализы__Tests_" Relationship="Self.FK_Результаты_анализов__Test_Results__Анализы__Tests_" FromRole="Результаты_анализов__Test_Results_" ToRole="Анализы__Tests_" />
+    <NavigationProperty Name="Врачи__Doctors_" Relationship="Self.FK_Результаты_анализов__Test_Results__Врачи__Doctors_" FromRole="Результаты_анализов__Test_Results_" ToRole="Врачи__Doctors_" />
+    <NavigationProperty Name="Пациенты__Patients_" Relationship="Self.FK_Результаты_анализов__Test_Results__Пациенты__Patients_1" FromRole="Результаты_анализов__Test_Results_" ToRole="Пациенты__Patients_" />
+  </EntityType>
+  <EntityType Name="Специализация_врача__Specialization_">
+    <Key>
+      <PropertyRef Name="Specialization_ID" />
+    </Key>
+    <Property Name="Specialization_ID" Type="Int32" Nullable="false" />
+    <Property Name="Specialization" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Врачи__Doctors_" Relationship="Self.FK_Врачи__Doctors__Специализация_врача__Specialization_" FromRole="Специализация_врача__Specialization_" ToRole="Врачи__Doctors_" />
+  </EntityType>
+  <Association Name="FK_User_Role1">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Врачи__Doctors__Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="Врачи__Doctors_" Type="Self.Врачи__Doctors_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Врачи__Doctors_">
+        <PropertyRef Name="Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Анализы__Tests__Описание_анализа__Description_">
+    <End Role="Описание_анализа__Description_" Type="Self.Описание_анализа__Description_" Multiplicity="1" />
+    <End Role="Анализы__Tests_" Type="Self.Анализы__Tests_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Описание_анализа__Description_">
+        <PropertyRef Name="Description_id" />
+      </Principal>
+      <Dependent Role="Анализы__Tests_">
+        <PropertyRef Name="description_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Результаты_анализов__Test_Results__Анализы__Tests_">
+    <End Role="Анализы__Tests_" Type="Self.Анализы__Tests_" Multiplicity="1" />
+    <End Role="Результаты_анализов__Test_Results_" Type="Self.Результаты_анализов__Test_Results_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Анализы__Tests_">
+        <PropertyRef Name="Test_id" />
+      </Principal>
+      <Dependent Role="Результаты_анализов__Test_Results_">
+        <PropertyRef Name="Test_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Врачи__Doctors__Отделы__Departments_">
+    <End Role="Отделы__Departments_" Type="Self.Отделы__Departments_" Multiplicity="1" />
+    <End Role="Врачи__Doctors_" Type="Self.Врачи__Doctors_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Отделы__Departments_">
+        <PropertyRef Name="Department_id" />
+      </Principal>
+      <Dependent Role="Врачи__Doctors_">
+        <PropertyRef Name="Department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Врачи__Doctors__Специализация_врача__Specialization_">
+    <End Role="Специализация_врача__Specialization_" Type="Self.Специализация_врача__Specialization_" Multiplicity="1" />
+    <End Role="Врачи__Doctors_" Type="Self.Врачи__Doctors_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Специализация_врача__Specialization_">
+        <PropertyRef Name="Specialization_ID" />
+      </Principal>
+      <Dependent Role="Врачи__Doctors_">
+        <PropertyRef Name="Specialization" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Назначения__Appointments__Врачи__Doctors_">
+    <End Role="Врачи__Doctors_" Type="Self.Врачи__Doctors_" Multiplicity="1" />
+    <End Role="Назначения__Appointments_" Type="Self.Назначения__Appointments_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Врачи__Doctors_">
+        <PropertyRef Name="Doctor_id" />
+      </Principal>
+      <Dependent Role="Назначения__Appointments_">
+        <PropertyRef Name="Doctor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Результаты_анализов__Test_Results__Врачи__Doctors_">
+    <End Role="Врачи__Doctors_" Type="Self.Врачи__Doctors_" Multiplicity="1" />
+    <End Role="Результаты_анализов__Test_Results_" Type="Self.Результаты_анализов__Test_Results_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Врачи__Doctors_">
+        <PropertyRef Name="Doctor_id" />
+      </Principal>
+      <Dependent Role="Результаты_анализов__Test_Results_">
+        <PropertyRef Name="Doctor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Закупки__Purchases__Оборудование__Equipment_">
+    <End Role="Оборудование__Equipment_" Type="Self.Оборудование__Equipment_" Multiplicity="1" />
+    <End Role="Закупки__Purchases_" Type="Self.Закупки__Purchases_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Оборудование__Equipment_">
+        <PropertyRef Name="Equipment_id" />
+      </Principal>
+      <Dependent Role="Закупки__Purchases_">
+        <PropertyRef Name="Equipment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Закупки__Purchases__Поставщики__Suppliers_">
+    <End Role="Поставщики__Suppliers_" Type="Self.Поставщики__Suppliers_" Multiplicity="1" />
+    <End Role="Закупки__Purchases_" Type="Self.Закупки__Purchases_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Поставщики__Suppliers_">
+        <PropertyRef Name="Supplier_id" />
+      </Principal>
+      <Dependent Role="Закупки__Purchases_">
+        <PropertyRef Name="Supplier_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Назначения__Appointments__Пациенты__Patients_1">
+    <End Role="Пациенты__Patients_" Type="Self.Пациенты__Patients_" Multiplicity="1" />
+    <End Role="Назначения__Appointments_" Type="Self.Назначения__Appointments_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Пациенты__Patients_">
+        <PropertyRef Name="Patient_id" />
+      </Principal>
+      <Dependent Role="Назначения__Appointments_">
+        <PropertyRef Name="Patient_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Отделы__Departments__Поставщики__Suppliers_">
+    <End Role="Поставщики__Suppliers_" Type="Self.Поставщики__Suppliers_" Multiplicity="1" />
+    <End Role="Отделы__Departments_" Type="Self.Отделы__Departments_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Поставщики__Suppliers_">
+        <PropertyRef Name="Supplier_id" />
+      </Principal>
+      <Dependent Role="Отделы__Departments_">
+        <PropertyRef Name="Supplier_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Результаты_анализов__Test_Results__Пациенты__Patients_1">
+    <End Role="Пациенты__Patients_" Type="Self.Пациенты__Patients_" Multiplicity="1" />
+    <End Role="Результаты_анализов__Test_Results_" Type="Self.Результаты_анализов__Test_Results_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Пациенты__Patients_">
+        <PropertyRef Name="Patient_id" />
+      </Principal>
+      <Dependent Role="Результаты_анализов__Test_Results_">
+        <PropertyRef Name="Patient_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Medical_Laboratory_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Doctors" EntityType="Self.Doctors" />
+    <EntitySet Name="Role" EntityType="Self.Role" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="Анализы__Tests_" EntityType="Self.Анализы__Tests_" />
+    <EntitySet Name="Врачи__Doctors_" EntityType="Self.Врачи__Doctors_" />
+    <EntitySet Name="Закупки__Purchases_" EntityType="Self.Закупки__Purchases_" />
+    <EntitySet Name="Назначения__Appointments_" EntityType="Self.Назначения__Appointments_" />
+    <EntitySet Name="Оборудование__Equipment_" EntityType="Self.Оборудование__Equipment_" />
+    <EntitySet Name="Описание_анализа__Description_" EntityType="Self.Описание_анализа__Description_" />
+    <EntitySet Name="Отделы__Departments_" EntityType="Self.Отделы__Departments_" />
+    <EntitySet Name="Пациенты__Patients_" EntityType="Self.Пациенты__Patients_" />
+    <EntitySet Name="Поставщики__Suppliers_" EntityType="Self.Поставщики__Suppliers_" />
+    <EntitySet Name="Результаты_анализов__Test_Results_" EntityType="Self.Результаты_анализов__Test_Results_" />
+    <EntitySet Name="Специализация_врача__Specialization_" EntityType="Self.Специализация_врача__Specialization_" />
+    <AssociationSet Name="FK_User_Role1" Association="Self.FK_User_Role1">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Врачи__Doctors__Role" Association="Self.FK_Врачи__Doctors__Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Врачи__Doctors_" EntitySet="Врачи__Doctors_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Анализы__Tests__Описание_анализа__Description_" Association="Self.FK_Анализы__Tests__Описание_анализа__Description_">
+      <End Role="Описание_анализа__Description_" EntitySet="Описание_анализа__Description_" />
+      <End Role="Анализы__Tests_" EntitySet="Анализы__Tests_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Результаты_анализов__Test_Results__Анализы__Tests_" Association="Self.FK_Результаты_анализов__Test_Results__Анализы__Tests_">
+      <End Role="Анализы__Tests_" EntitySet="Анализы__Tests_" />
+      <End Role="Результаты_анализов__Test_Results_" EntitySet="Результаты_анализов__Test_Results_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Врачи__Doctors__Отделы__Departments_" Association="Self.FK_Врачи__Doctors__Отделы__Departments_">
+      <End Role="Отделы__Departments_" EntitySet="Отделы__Departments_" />
+      <End Role="Врачи__Doctors_" EntitySet="Врачи__Doctors_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Врачи__Doctors__Специализация_врача__Specialization_" Association="Self.FK_Врачи__Doctors__Специализация_врача__Specialization_">
+      <End Role="Специализация_врача__Specialization_" EntitySet="Специализация_врача__Specialization_" />
+      <End Role="Врачи__Doctors_" EntitySet="Врачи__Doctors_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Назначения__Appointments__Врачи__Doctors_" Association="Self.FK_Назначения__Appointments__Врачи__Doctors_">
+      <End Role="Врачи__Doctors_" EntitySet="Врачи__Doctors_" />
+      <End Role="Назначения__Appointments_" EntitySet="Назначения__Appointments_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Результаты_анализов__Test_Results__Врачи__Doctors_" Association="Self.FK_Результаты_анализов__Test_Results__Врачи__Doctors_">
+      <End Role="Врачи__Doctors_" EntitySet="Врачи__Doctors_" />
+      <End Role="Результаты_анализов__Test_Results_" EntitySet="Результаты_анализов__Test_Results_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Закупки__Purchases__Оборудование__Equipment_" Association="Self.FK_Закупки__Purchases__Оборудование__Equipment_">
+      <End Role="Оборудование__Equipment_" EntitySet="Оборудование__Equipment_" />
+      <End Role="Закупки__Purchases_" EntitySet="Закупки__Purchases_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Закупки__Purchases__Поставщики__Suppliers_" Association="Self.FK_Закупки__Purchases__Поставщики__Suppliers_">
+      <End Role="Поставщики__Suppliers_" EntitySet="Поставщики__Suppliers_" />
+      <End Role="Закупки__Purchases_" EntitySet="Закупки__Purchases_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Назначения__Appointments__Пациенты__Patients_1" Association="Self.FK_Назначения__Appointments__Пациенты__Patients_1">
+      <End Role="Пациенты__Patients_" EntitySet="Пациенты__Patients_" />
+      <End Role="Назначения__Appointments_" EntitySet="Назначения__Appointments_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Отделы__Departments__Поставщики__Suppliers_" Association="Self.FK_Отделы__Departments__Поставщики__Suppliers_">
+      <End Role="Поставщики__Suppliers_" EntitySet="Поставщики__Suppliers_" />
+      <End Role="Отделы__Departments_" EntitySet="Отделы__Departments_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Результаты_анализов__Test_Results__Пациенты__Patients_1" Association="Self.FK_Результаты_анализов__Test_Results__Пациенты__Patients_1">
+      <End Role="Пациенты__Patients_" EntitySet="Пациенты__Patients_" />
+      <End Role="Результаты_анализов__Test_Results_" EntitySet="Результаты_анализов__Test_Results_" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
